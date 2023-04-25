@@ -1,0 +1,2 @@
+class ArtistRepository
+end
