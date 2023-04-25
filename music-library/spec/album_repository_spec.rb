@@ -27,7 +27,7 @@ RSpec.describe AlbumRepository do
         repo = AlbumRepository.new
 
         album = repo.find(1)
-        expect.(album.title).to eq 'Waterloo'
+        expect(album.title).to eq 'Waterloo'
         expect(album.release_year).to eq '1974'
         expect(album.artist_id).to eq '2'
     end

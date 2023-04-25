@@ -10,14 +10,16 @@ artist_repository = ArtistRepository.new
 #     p artist
 # end
 
-# album_repository = AlbumRepository.new
+album_repository = AlbumRepository.new
 
 # album_repository.all.each do |album|
 #     # album
 #     p "#{album.title}"
 # end
 
-artist = artist_repository.find(4)
-puts artist.name
+# artist = artist_repository.find(4)
+# puts artist.name
 
+album = album_repository.find(1)
+puts album.title
 
