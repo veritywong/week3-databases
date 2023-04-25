@@ -121,16 +121,13 @@ class AlbumRepository
     # Returns an array of Album objects.
   end
 
-  # Add more methods below for each operation you'd like to implement.
+  def find(id)
+    # exectures the SQL query:
+    # SELECT id, title, release_year, artist_id FROM artists WHERE id = $1
 
-  # def create(student)
-  # end
+    # returns a single Album object
+  end
 
-  # def update(student)
-  # end
-
-  # def delete(student)
-  # end
 end
 ```
 
@@ -152,6 +149,15 @@ albums = repo.all
 albums.length # => 2
 albums.first.id # => '1'
 albums.first.title # => 'Folklore'
+
+# 2
+# Get a single album
+repo = AlbumRepository.new
+
+album. = repo.find(1)
+album.title # => 'Waterloo'
+album.release_year # => '1974'
+album.artist_id # => '2'
 
 Encode this example as a test.
 
