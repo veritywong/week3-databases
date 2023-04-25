@@ -13,5 +13,6 @@ artist_repository = ArtistRepository.new
 album_repository = AlbumRepository.new
 
 album_repository.all.each do |album|
-    p album
+    # album
+    p "#{album.title}"
 end
