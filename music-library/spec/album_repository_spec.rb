@@ -19,8 +19,8 @@ RSpec.describe AlbumRepository do
 
         albums = repo.all
         expect(albums.length).to eq 2
-        expect(albums.first.id).to eq '1'
-        expect(albums.first.title).to eq 'Folklore'
+        expect(albums.first.id).to eq '2'
+        expect(albums.first.title).to eq 'Waterloo'
     end
 
 end
