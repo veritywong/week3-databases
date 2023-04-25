@@ -1,3 +1,5 @@
+require_relative './album'
+
 class AlbumRepository
     def all
         # Executes the SQL query:

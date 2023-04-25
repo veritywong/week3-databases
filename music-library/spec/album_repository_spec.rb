@@ -15,11 +15,11 @@ RSpec.describe AlbumRepository do
     end
 
     it 'shows all albums' do
-        repo - AlbumRepository.new
+        repo = AlbumRepository.new
 
         albums = repo.all
         expect(albums.length).to eq 2
-        expect(albums.first.id).to eq '2'
+        expect(albums.first.id).to eq '1'
         expect(albums.first.title).to eq 'Waterloo'
     end
 
