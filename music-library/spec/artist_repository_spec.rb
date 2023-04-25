@@ -1,5 +1,5 @@
 require 'artist_repository'
-
+require 'artist'
 
 RSpec.describe ArtistRepository do
 
@@ -19,8 +19,8 @@ RSpec.describe ArtistRepository do
         repo = ArtistRepository.new
         artists = repo.all
         expect(artists.length).to eq 2
-        expect(artists.first.id).to eq 1
-        expect(artists.find.name).to eq 'Pixies'
+        expect(artists.first.id).to eq '1'
+        expect(artists.first.name).to eq 'Pixies'
 
     end
 end
