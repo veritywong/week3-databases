@@ -18,4 +18,7 @@ class ArtistRepository
 
         return artists
     end
+
+    def find(id)
+    end
 end
