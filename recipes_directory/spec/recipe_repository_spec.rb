@@ -24,23 +24,26 @@ RSpec.describe RecipeRepository do
     expect(recipes.first.average_cooking_time).to eq '30'
     expect(recipes.first.rating).to eq '5'
 
-    # expect(recipes.[1].id).to eq '2'
-    # expect(recipes.[1].name).to eq 'Baked Potato'
-    # expect(recipes.[1].average_cooking_time).to eq '60'
-    # expect(recipes.[1].rating).to eq '4'
+    expect(recipes[1].id).to eq '2'
+    expect(recipes[1].name).to eq 'Baked Potato'
+    expect(recipes[1].average_cooking_time).to eq '60'
+    expect(recipes[1].rating).to eq '4'
+  end
+  
+  
+  it "returns a single recipe" do
+
+    repo = RecipeRepository.new
+    
+    recipes = repo.find(1)
+    expect(recipes.id).to eq '1'
+    expect(recipes.name).to eq 'Stir Fry Noodles'
+    expect(recipes.average_cooking_time).to eq '30'
+    expect(recipes.rating).to eq '5'
+
   end
 end
   
-    # # 2
-    # # Get a single recipe
-    # repo = RecipeRepository.new
-
-    # recipes = repo.find(1)
-    # recipes.id # => 1
-    # recipes.name # => 'Stir Fry Noodles'
-    # recipes.average_cooking_time # => '30'
-    # recipes.rating # => '5'
-
     # # 3
     # # Get another single recipe
     # repo = RecipeRepository.new
