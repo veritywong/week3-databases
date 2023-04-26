@@ -86,7 +86,7 @@ Define the attributes of your Model class. You can usually map the table columns
 class Recipe
 
   # Replace the attributes by your own columns.
-  attr_accessor :id, :name, :average_cooking_time
+  attr_accessor :id, :name, :average_cooking_time, :rating
 end
 
 # The keyword attr_accessor is a special Ruby feature
