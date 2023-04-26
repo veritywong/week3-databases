@@ -1,4 +1,4 @@
-require 'recipe'
+require_relative './recipe'
 
 class RecipeRepository
 
@@ -32,7 +32,7 @@ class RecipeRepository
       recipe.name = record['name']
       recipe.average_cooking_time = record['average_cooking_time']
       recipe.rating = record['rating']
-      
+
       return recipe
     end
 end

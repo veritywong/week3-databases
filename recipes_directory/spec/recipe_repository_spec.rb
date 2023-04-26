@@ -32,7 +32,6 @@ RSpec.describe RecipeRepository do
   
   
   it "returns a single recipe" do
-
     repo = RecipeRepository.new
     
     recipes = repo.find(1)
@@ -42,14 +41,14 @@ RSpec.describe RecipeRepository do
     expect(recipes.rating).to eq '5'
 
   end
-end
   
-    # # 3
-    # # Get another single recipe
-    # repo = RecipeRepository.new
-
-    # recipes = repo.find(3)
-    # recipes.id # => 3
-    # recipes.name # => 'Carbonara'
-    # recipes.average_cooking_time # => '30'
-    # recipes.rating # => '4'
+  it "returns another single recipe" do
+    repo = RecipeRepository.new
+    
+    recipes = repo.find(3)
+    expect(recipes.id).to eq '3'
+    expect(recipes.name).to eq 'Carbonara'
+    expect(recipes.average_cooking_time).to eq '30'
+    expect(recipes.rating).to eq '4'
+  end
+end
