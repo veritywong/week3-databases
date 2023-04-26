@@ -53,7 +53,7 @@ Remember to **always** have the primary key `id` as a first column. Its type wil
 id: SERIAL
 name: text
 average_cooking_time: int
-rating: int
+rating: numeric
 ```
 
 ## 4. Write the SQL.
@@ -67,7 +67,7 @@ rating: int
 CREATE TABLE recipes (
   id SERIAL PRIMARY KEY,
   name text,
-  average_cooking_time int
+  average_cooking_time int,
   rating int
 );
 ```
