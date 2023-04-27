@@ -155,13 +155,13 @@ These examples will later be encoded as RSpec tests.
 # 1
 # Get all accounts
 
-repo = AccountRepository.new
-accounts = repo.all
+# repo = AccountRepository.new
+# accounts = repo.all
 
-accounts.length # => 5
-accounts.first.id # => '1'
-accounts.first.email # => 'vw@gmail.com'
-accounts.first.username # => 'vw'
+# accounts.length # => 5
+# accounts.first.id # => '1'
+# accounts.first.email # => 'vw@gmail.com'
+# accounts.first.username # => 'vw'
 
 
 # 2

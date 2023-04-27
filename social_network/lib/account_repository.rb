@@ -1,10 +1,22 @@
+require_relative './account'
+
 class AccountRepository
 
     def all
-      # Executes the SQL query:
-      # SELECT id, email, username FROM accounts;
-  
-      # Returns an array of Artist objects.
+      sql = 'SELECT id, email, username FROM accounts;'
+      result_set = DatabaseConnection.exec_params(sql, [])
+
+      accounts = []
+      result_set.each do |record|
+         account = Account.new
+         account.id = record['id']
+         account.email = record['email']
+         account.username = record['username']
+
+         accounts << account
+      end
+
+      return accounts
     end
   
     def find(id)

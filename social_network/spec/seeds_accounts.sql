@@ -1,4 +1,5 @@
-TRUNCATE TABLE accounts RESTART IDENTITY; -- replace with your own table name.
+-- TRUNCATE TABLE posts RESTART IDENTITY;
+TRUNCATE TABLE accounts RESTART IDENTITY;
 
 -- Below this line there should only be `INSERT` statements.
 -- Replace these statements with your own seed data.
