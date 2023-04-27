@@ -27,9 +27,28 @@ RSpec.describe AccountRepository do
         repo = AccountRepository.new
 
         account = repo.find(1)
-        expect(account.id)to.eq '1'
-        expect(account.username)to.eq 'vw'
-        expect(account.email)to.eq 'vw@gmail.com'
+        expect(account.id).to eq '1'
+        expect(account.username).to eq 'vw'
+        expect(account.email).to eq 'vw@gmail.com'
     end
 
+    it 'get another account' do
+        repo = AccountRepository.new
+
+        account = repo.find(3)
+        expect(account.email).to eq 'sf@gmail.com'
+        expect(account.id).to eq '3'
+        expect(account.username).to eq 'sf'
+    end
+
+    it 'creates a new account user' do
+        repo = AccountRepository.new
+        account = Account.new
+        account.email = 'new_user@gmail.com'
+        account.username = 'new_user'
+        repo.create(account)
+
+        expect(repo.last.email).to eq 'new_user@gmail.com'
+        expect(repo.last.username).to eq 'new_user'
+    end
 end

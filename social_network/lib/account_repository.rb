@@ -20,10 +20,17 @@ class AccountRepository
     end
   
     def find(id)
-      # exectures the SQL query:
-      # SELECT id, email, username FROM accounts WHERE id = $1
-  
-      # returns a single Account object
+      sql = 'SELECT id, email, username FROM accounts WHERE id = $1;'
+      sql_param = [id]
+      result_set = DatabaseConnection.exec_params(sql, sql_param)
+
+      record = result_set[0]
+      account = Account.new
+      account.id = record['id']
+      account.email = record['email']
+      account.username = record['username']
+      
+      return account
     end
   
     def create(account)

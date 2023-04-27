@@ -165,33 +165,33 @@ These examples will later be encoded as RSpec tests.
 
 
 # 2
-# Get a single account
-repo = AccountRepository.new
+# # Get a single account
+# repo = AccountRepository.new
 
-account = repo.find(1)
-account.id # => '1'
-account.email # => 'vw@gmail.com'
-account.username # => 'vw'
+# account = repo.find(1)
+# account.id # => '1'
+# account.email # => 'vw@gmail.com'
+# account.username # => 'vw'
 
 # 3
-# Get another account
-repo = AccountRepository.new
+# # Get another account
+# repo = AccountRepository.new
 
-account = repo.find(3)
-account.id # => '3'
-account.email # => 'ha@gmail.com'
-account.username # => 'ha'
+# account = repo.find(3)
+# account.id # => '3'
+# account.email # => 'ha@gmail.com'
+# account.username # => 'ha'
 
 # 4
-# creates a new account user
-repo = AccountRepository.new
-account = Account.new
-account.email = 'new_user@gmail.com'
-account.username = 'new_user'
-repo.create(account)
+# # creates a new account user
+# repo = AccountRepository.new
+# account = Account.new
+# account.email = 'new_user@gmail.com'
+# account.username = 'new_user'
+# repo.create(account)
 
-repo.last.email # => 'new_user@gmail.com'
-repo.last.username # => 'new_user'
+# repo.last.email # => 'new_user@gmail.com'
+# repo.last.username # => 'new_user'
 
 # 5
 # deletes an existing account
