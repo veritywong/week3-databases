@@ -128,6 +128,12 @@ class AlbumRepository
     # returns a single Album object
   end
 
+  def creat(album)
+    # execute the SQL query
+    # INSERT INTO albums (title, release_year, artist_id) VALUES($1, $2, $3);
+    # return nil
+  end
+
 end
 ```
 
@@ -143,7 +149,7 @@ These examples will later be encoded as RSpec tests.
 # 1
 # Get all artists
 
-repo - AlbumRepository.new
+repo = AlbumRepository.new
 
 albums = repo.all
 albums.length # => 2
@@ -154,12 +160,25 @@ albums.first.title # => 'Folklore'
 # Get a single album
 repo = AlbumRepository.new
 
-album. = repo.find(1)
+album = repo.find(1)
 album.title # => 'Waterloo'
 album.release_year # => '1974'
 album.artist_id # => '2'
 
 Encode this example as a test.
+
+# 3
+# create a new album record
+album = Album.new
+album.title = 'Trompe le Monde'
+album.release_year = 1991
+album.artist_id = 1
+
+repo = AlbumRepository.new
+repo.create(album)
+expect(repo.lenght).to eq '3'
+
+
 
 ## 7. Reload the SQL seeds before each test run
 

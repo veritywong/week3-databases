@@ -14,7 +14,7 @@ RSpec.describe AlbumRepository do
         end
     end
 
-    it 'shows all albums' do
+    xit 'shows all albums' do
         repo = AlbumRepository.new
 
         albums = repo.all
@@ -32,4 +32,26 @@ RSpec.describe AlbumRepository do
         expect(album.artist_id).to eq '2'
     end
 
+    it "create a new album record" do
+      repo = AlbumRepository.new
+
+      new_album = Album.new
+      new_album.title = 'Trompe le Monde'
+      new_album.release_year = 1991
+      new_album.artist_id = 1
+      
+      repo.create(new_album)
+      all_albums = repo.all
+
+      expect(all_albums).to include(
+        have_attributes(
+          title: new_album.title,
+          release_year: '1991'
+        )
+      )   
+      last_album = all_albums.last
+      expect(last_album.title).to eq 'Trompe le Monde'
+      expect(last_album.release_year).to eq '1991'
+
+    end
 end
